@@ -15,5 +15,9 @@ read::proc()->string{
     
     text := cast(string) buffer[:bytes_read]
     return text
+
+    buf:[1024]byte
+    a,err:=os.read(os.stdin,buf[:])
+    fmt.println(string(buf[:a]))
     
 }

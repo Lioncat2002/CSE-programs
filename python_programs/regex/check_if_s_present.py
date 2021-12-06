@@ -7,6 +7,6 @@ n=input()
 n=n.split()
 
 for i in n:
-    if re.match("^[^s].*[sS].*[^s]$",i):
+    if re.match("^[^sS].*[sS].*[^sS]$",i):
         print(i)
     
