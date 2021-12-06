@@ -16,10 +16,10 @@ for i in n:
             # The next line is used for wrapping around the string
             # i.e. if the index is at the end of the string then it wraps around
             # to the start of the string
-            changed_index=(alphabets.index(i.lower())+13)%len(alphabets)
+            changed_index=(alphabets.index(i.lower())+3)%len(alphabets)
             cipher+=alphabets[changed_index].upper()
         else:
-            cipher+=alphabets[(alphabets.index(i)+13)%len(alphabets)]
+            cipher+=alphabets[(alphabets.index(i)+3)%len(alphabets)]
     else:
         cipher+=i
 print("Encrypted message: ",cipher)
