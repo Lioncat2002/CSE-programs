@@ -1,3 +1,8 @@
+'''
+Local functions testing
+not required for problem set 3
+'''
+
 def f():
     x=20
     y=50

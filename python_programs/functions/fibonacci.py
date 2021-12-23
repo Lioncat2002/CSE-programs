@@ -1,3 +1,7 @@
+'''
+Print the fibonacci series
+'''
+
 def fibonacci(a,b,n=0):
     if(n==10):
         

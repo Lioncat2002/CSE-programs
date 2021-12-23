@@ -1,3 +1,7 @@
+'''
+Check if a number is armstrong or not
+'''
+
 def armstrong(n):
     s=0
 

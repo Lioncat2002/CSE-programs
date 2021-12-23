@@ -1,3 +1,8 @@
+'''
+Find the intersection between two lists/iterables
+'''
+
+
 def intersect(seq1,seq2):
     res=[]
 
