@@ -11,7 +11,8 @@ def fibonacci(a,b,n=0):
     b=c
     n+=1
     print(c,end=' ')
-    fibonacci(a,b,n)
+    # sorry used recursion it's just soo better this way
+    fibonacci(a,b,n) 
 
     
 print(1,1,end=' ')
