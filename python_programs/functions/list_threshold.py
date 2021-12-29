@@ -5,7 +5,7 @@ effect to the function call, and not by function return value.
 '''
 
 l=[1,2,3,4,5,6]
-threshold=3
+threshold=int(input("Threshold: "))
 def threshold_checker(n):
     global l
     l=[i if i<=n else 0 for i in l]

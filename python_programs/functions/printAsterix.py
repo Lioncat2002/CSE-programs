@@ -6,4 +6,4 @@ out a line of n asterisks. If n is greater than 75, then only 75 asterisks shoul
 def printAsterix(n):
     return '*'*(n if n<75 else 75)
 
-print(printAsterix(1))
+print(printAsterix(int(input("Enter number: "))))
