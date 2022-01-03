@@ -1,3 +1,6 @@
 a line of text
 another line of text
+This is a new line at 3
 Hellow world again
+This is a line of texta line of text
+another line of text

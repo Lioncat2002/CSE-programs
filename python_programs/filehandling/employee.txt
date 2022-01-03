@@ -1,0 +1,9 @@
+1, Sankhayan, Programmer, Kolkata, Gamesystem designer, 1000000, 6
+2, Nikita, Lawyer, Bangalore, Law, 10000, 7
+3, Anurag, Engineer, Agartala, Electronics, 60000,6
+4, Utkarsh, Programmer,Dehradun, Database developer, 700000, 8 
+5, Vivek, Doctor, Kolkata, Medical, 300000, 9
+6, Aurko, Doctor, Kolkata, Medical, 200000, 7
+7, Saptami, Lawyer, Kolkata, Law, 20000, 5
+8, Roshni, Engineer, Kolkata, Electronics, 60000,2
+9, Ushnik, Artist, Mumbai, Game Art, 40000, 3
