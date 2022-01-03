@@ -53,6 +53,7 @@ f.close()
 '''
 Print the number of white spaces present
 '''
+
 f=open("file1.txt")
 r=f.read()
 print("Whitespaces:",len(re.findall(' ',r)))

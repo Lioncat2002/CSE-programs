@@ -1,3 +1,6 @@
+'''
+Writing and reading files using w+
+'''
 f=open("foo.txt","w+")
 f.writelines(["Hello\n","This is a new line"])
 f.flush()

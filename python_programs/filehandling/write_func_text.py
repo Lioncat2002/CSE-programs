@@ -1,3 +1,6 @@
+'''
+Testing write function
+'''
 f=open("welcome.txt",'w')
 f.write("Hellow world")
 f.close()
