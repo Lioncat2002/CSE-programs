@@ -15,7 +15,7 @@ def prime(n,l=[]):
     
         
 
-print(*prime(100))
+print(*prime(139))
 
 
 
