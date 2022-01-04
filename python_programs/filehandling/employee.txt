@@ -7,3 +7,4 @@
 7, Saptami, Lawyer, Kolkata, Law, 20000, 5
 8, Roshni, Engineer, Kolkata, Electronics, 60000,2
 9, Ushnik, Artist, Mumbai, Game Art, 40000, 3
+10, Debu, Artist, Mumbai, Game Art, 40000, 3
