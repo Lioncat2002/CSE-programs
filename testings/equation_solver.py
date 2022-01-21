@@ -1,9 +1,4 @@
 def function(x):
-    #return x**4-3*x**3-10*x**2+24*x
-    #return x**3-x**2-12*x
-    #return x**2-x-12
-    #return x**2+x-6
-    #return x**4+2*x**3+11*x**2+10*x+24
     return x**3-x-1
 
 

@@ -1,7 +1,5 @@
 import math
 def f(x):
-    return math.cos(x)
-    return x**3
     return math.sin(x) * math.cos(x) + math.exp(2*x) + 2*x**4 - 10
 
 
