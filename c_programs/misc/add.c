@@ -1,6 +1,6 @@
 #include "stdio.h"
 
-int main(int argc, char const *argv[])
+void main(int argc, char const *argv[])
 {
     int a,b,c;
     printf("Enter 2 numbers \n");
@@ -8,5 +8,5 @@ int main(int argc, char const *argv[])
     
     c=a+b;
     printf("%d",c);
-    return 0;
+    
 }
