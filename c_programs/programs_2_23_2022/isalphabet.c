@@ -5,7 +5,7 @@ int main(){
     char n;
     printf("Enter a character: ");
     scanf("%c",&n);
-
+    printf("%d\n",n);
     if ((n>='A' && n<='Z')||(n>='a' && n<='z'))
     {
         printf("%c is a alphabet",n);
