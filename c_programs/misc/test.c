@@ -1,19 +1,28 @@
 #include <stdio.h>
-int main(int argc, char const *argv[])
-{int hours , minutes , seconds ;
-    time:
-    printf("Give your time input in HH MM SS format :");
-    scanf ("%d %d %d", &hours,&minutes,&seconds);
-    if (hours>24 || minutes>60|| seconds>60)
+int main()
+{
+    int in,factor=1,sum=0,temp,digit,i=1;
+    printf("Give the number here :> ");
+    scanf("%d",&in);
+    temp=(int)in;
+    while (in!=0)
     {
-        printf("The time input is wrong \n");
-        printf("Give the time properly\n");
-        goto time;
+        factor=1;
+        digit=in%10;
+        while (i<=digit)
+        {
+            factor=factor*i;
+            i++;
+        }
+        printf("%d %d\n",factor,digit);
+        sum=sum+factor;
+        i=1;
+        in=in/10;
+        
+    }
+    printf("\n%d",sum);
+    
+    
 
-    }
-    else {
-        printf ("Your given time is : ");
-        printf("%d : %d : %d",hours,minutes,seconds);
-    }
     return 0;
 }
