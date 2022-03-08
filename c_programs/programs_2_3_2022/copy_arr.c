@@ -2,7 +2,7 @@
 
 int main(){
     int arr[200],arr1[200],n;//technically possible to dynamically allocate array size in gcc but not doing it:p
-    
+    char c[100];
     printf("Enter the limit: \n");
     scanf("%d",&n);
 
