@@ -1,30 +1,35 @@
 #include<stdio.h>
-void main(){
-    int n1,n2,a[5][5],b[5][5],c[5][5];
-    printf("Enter the no of rows and columns of the array: ");
-    scanf("%d %d",&n1,&n2);
-    for(int i=0;i<n1;i++){
-        for(int j=0;j<n2;j++){
-            printf("Enter the a[%d][%d] element value: ",i,j);
-            scanf("%d",&a[i][j]);
+int main(){
+    int a1,x,y,z;
+    int k1[10][10],k2[10][10],re[10][10];
+    scanf("%d %d",&a1,&a1);
+    scanf("%d %d",&a1,&a1);
+    for(x=0;x<a1;x++){
+        for(y=0;y<a1;y++){
+            scanf("%d",&k1[x][y]);
         }
     }
-    for(int i=0;i<n1;i++){
-        for(int j=0;j<n2;j++){
-            printf("Enter the b[%d][%d] element value: ",i,j);
-            scanf("%d",&b[i][j]);
+    for(x=0;x<a1;x++){
+        for(y=0;y<a1;y++){
+            scanf("%d",&k2[x][y]); 
         }
     }
-    printf("The subtraction of two matrices a[][] and b[][] = c[][] that is equivalent to \n");
-    for(int i=0;i<n1;i++){
-        for(int j=0;j<n2;j++){
-            c[i][j]=a[i][j]-b[i][j];
+        for(x=0;x<a1;x++){
+            for(y=0;y<a1;y++)
+        {
+            int s=0;
+            for (z=0;z<a1;z++)
+            {
+            s+=k1[x][y]*k2[z][y];
+            }
+            re[x][y]=s;
+        }
+    
+    }
+    for (x=0;x<a1;x++){
+        for (y=0;y<a1;y++){
+            printf("%d ",re[x][y]);
         }
     }
-    for(int i=0;i<n1;i++){
-        for(int j=0;j<n2;j++){
-            printf("%d ",c[i][j]);
-        }
-        printf("\n");
-    }
+    return 0;
 }
