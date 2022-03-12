@@ -4,11 +4,11 @@
 
 char matrix[3][3];
 
-char check(void);
-void init_matrix(void);
-void get_player_move(void);
-void get_computer_move(void);
-void disp_matrix(void);
+char check();
+void init_matrix();
+void get_player_move();
+void get_computer_move();
+void disp_matrix();
 
 int main(){
     char done;
@@ -29,7 +29,7 @@ int main(){
         get_computer_move();
         done=check();//See if winner
 
-    }while (done=' ');
+    }while (done==' ');
    
     if (done=='X')
     {
@@ -42,12 +42,11 @@ int main(){
     
 }
 
-void init_matrix(void){
+void init_matrix(){
     int i,j;
     for (i = 0; i < 3; i++)
     {
-         printf("Inited\n");
-        for (j = 0; i < 3; j++)
+        for (j = 0; j < 3; j++)
         {
            matrix[i][j]=' ';
         }
@@ -57,10 +56,10 @@ void init_matrix(void){
     
 }
 
-void get_player_move(void){
+void get_player_move(){
     int x,y;
     printf("Enter X and Y coordinates: ");
-    scanf("%d %d",&x,&y);
+    scanf("%d%*c%d",&x,&y);
     x--;
     y--;
     if (matrix[x][y]!=' ')
@@ -72,19 +71,19 @@ void get_player_move(void){
         matrix[x][y]='X';
     }
 }
-void get_computer_move(void){
+void get_computer_move(){
 
     int i,j;
     for ( i = 0; i < 3; i++)
     {
         for ( j = 0; j < 3; j++)
         {
-            if (matrix[i][j])
+            if (matrix[i][j]==' ')
             {
                break;
             }
         }
-        if (matrix[i][j])
+        if (matrix[i][j]==' ')
         {
                break;
         }
@@ -100,11 +99,11 @@ void get_computer_move(void){
     }
 }
 
-void disp_matrix(void){
+void disp_matrix(){
     
     for (int i = 0; i < 3; i++)
     {
-        printf(" %c  | %c  | %c  ",matrix[i][0],matrix[i][1],matrix[i][2]);
+        printf(" %c | %c | %c  ",matrix[i][0],matrix[i][1],matrix[i][2]);
         if (i!=2)
         {
            printf("\n---|---|---\n");
@@ -114,7 +113,7 @@ void disp_matrix(void){
 
 }
 
-char check(void){
+char check(){
 
     for (int i = 0; i < 3; i++)//check rows
     {
@@ -132,10 +131,15 @@ char check(void){
         }
         
     }
-    if (matrix[0][2]==matrix[1][1]&&matrix[1][1]==matrix[2][0])
+    if (matrix[0][2]==matrix[1][1]&&matrix[1][1]==matrix[2][0])//check diagonals
     {
         return matrix[0][2];
     }
+    if (matrix[0][0]==matrix[1][1]&&matrix[1][1]==matrix[2][2])//check diagonals
+    {
+        return matrix[0][0];
+    }
+
     
     return ' ';
 }
