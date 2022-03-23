@@ -4,7 +4,7 @@
 int main(){
     float a[2][2],b[2][2],result[2][2];
 
-    printf("Enter elements of the 1st matrix:\n");
+    //printf("Enter elements of the 1st matrix:\n");
     for (int i = 0; i < 2; i++)
     {
         for (int j = 0; j < 2; j++)
