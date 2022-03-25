@@ -1,10 +1,16 @@
-#include<stdio.h>
-
+#include "stdio.h"
 int main()
-
 {
-
-int a = 25, b = 12;
-printf("%d", (23*2) % (int) 5.5);
-
+int i, j;
+char a[2] [3] = { {'a', 'b', 'c'}, {'d', 'e', 'f'}};
+char b[3] [2];
+char *p = *b;
+for (i=0; i<2; i++)
+{
+ for(j=0; j<3; j++)
+ {
+ *(p+2 * j + i) = a[i][j];
+ }
+ }
+ printf("%s",b);
 }
