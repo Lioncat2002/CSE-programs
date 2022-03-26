@@ -1,5 +1,30 @@
 /*
-1
-212
-32123
+Equilateral triangle
+     *
+    * *
+   * * *
+
+
 */
+
+#include "stdio.h"
+
+int main(){
+    int n;
+    printf("Limit: ");
+    scanf("%d",&n);
+
+    for (int i = n; i >= 1; i--)
+    {
+        for (int j = 1; j <= i; j++)
+        {
+            printf(" ");
+        }
+        for (int k = n; k >= i; k--)
+        {
+            printf("* ");
+        }
+        printf("\n");
+    }
+    
+}
