@@ -1,15 +1,16 @@
 #include <iostream>
 
-struct temp{
-    int a;
-}s;
+using namespace std;
 
-void fun(struct temp s){
-    s.a=1;
-}
+class Test{
+
+    static int i;
+    int j;
+};
+
+int Test::i;
 
 int main(){
-    s.a=10;
-    fun(s);
-    printf("%d",s.a);
+    cout<<sizeof(Test);
+          return 0;
 }
