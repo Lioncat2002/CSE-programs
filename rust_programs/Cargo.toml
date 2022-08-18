@@ -1,0 +1,2 @@
+[workspace]
+members = ["programs/hello_world/","programs/class_strength"]

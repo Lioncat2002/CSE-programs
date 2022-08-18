@@ -42,7 +42,7 @@ int main()
     new_stack(&stack, 20);
     char brackets[200];
     printf("Enter brackets: ");
-    fgets(brackets,200,stdin);
+    fgets(brackets, 200, stdin);
     for (int i = 0; brackets[i] != '\0'; i++)
     {
         if (stack.top > -1)

@@ -2,7 +2,7 @@
 #include "stdlib.h"
 typedef struct
 {
-    int stack[200];
+    char stack[200];
     int top;
     int size;
 } Stack;
@@ -16,7 +16,7 @@ int disp(Stack *stack)
 {
     for (int i = stack->top; i >= 0; i--)
     {
-        printf("%d ", stack->stack[i]);
+        printf("%c ", stack->stack[i]);
     }
     printf("\n");
 }
@@ -30,9 +30,11 @@ int pop(Stack *stack)
 {
     if (stack->top < 0)
     {
-        printf("Stack Underflow!\n");
+        printf("Stack Underflow!");
         exit(1);
     }
-    int idx = stack->top--;
-    return stack->stack[idx];
+    stack->top--;
+}
+int main(){
+
 }
