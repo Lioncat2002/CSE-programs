@@ -1,40 +1,100 @@
-#include "stdio.h"
-#include "stdlib.h"
-typedef struct
-{
-    char stack[200];
-    int top;
-    int size;
-} Stack;
+// C program to convert infix expression to postfix
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
 
-int new_stack(Stack *stack, int size)
+// Stack type
+typedef struct 
 {
-    stack->size = size;
-    stack->top = -1;
+	int top;
+	int stack[200];
+}Stack;
+
+// Stack Operations
+int new_stack( Stack *stack )
+{
+	stack->top = -1;
 }
-int disp(Stack *stack)
+int empty(Stack* stack)
 {
-    for (int i = stack->top; i >= 0; i--)
-    {
-        printf("%c ", stack->stack[i]);
-    }
-    printf("\n");
+	return stack->top == -1 ;
+}
+char peek(Stack* stack)
+{
+	return stack->stack[stack->top];
+}
+char pop(Stack* stack)
+{
+	if (!empty(stack))
+		return stack->stack[stack->top--] ;
+	printf("Stack underflow!");
+}
+void push(Stack* stack, char op)
+{
+	stack->stack[++stack->top] = op;
 }
 
-int push(Stack *stack, char val)
+int is_operand(char ch)
 {
-    stack->top++;
-    stack->stack[stack->top] = val;
+	return '0'<=ch && ch<='9';
 }
-int pop(Stack *stack)
-{
-    if (stack->top < 0)
-    {
-        printf("Stack Underflow!");
-        exit(1);
-    }
-    stack->top--;
-}
-int main(){
 
+int precedence(char ch)
+{
+	switch (ch)
+	{
+	case '+':
+	case '-':
+		return 1;
+
+	case '*':
+	case '/':
+		return 2;
+
+	case '^':
+		return 3;
+	}
+	return -1;
+}
+
+int main()
+{
+	char exp[] = "1+2-3*6";
+		int i, k;
+	Stack stack; 
+    new_stack(&stack);
+	
+
+	for (i = 0, k = -1; exp[i]; ++i)
+	{
+		if (is_operand(exp[i]))
+			exp[++k] = exp[i];
+		else if (exp[i] == '(')
+			push(&stack, exp[i]);
+	
+		else if (exp[i] == ')')
+		{
+			while (!empty(&stack) && peek(&stack) != '(')
+				exp[++k] = pop(&stack);
+			if (!empty(&stack) && peek(&stack) != '(')
+				return -1; 			
+			else
+				pop(&stack);
+		}
+		else
+		{
+			while (!empty(&stack) &&
+				precedence(exp[i]) <= precedence(peek(&stack)))
+				exp[++k] = pop(&stack);
+			push(&stack, exp[i]);
+		}
+
+	}
+	while (!empty(&stack))
+		exp[++k] = pop(&stack );
+
+	exp[++k] = '\0';
+	printf( "%s", exp );
+
+	return 0;
 }

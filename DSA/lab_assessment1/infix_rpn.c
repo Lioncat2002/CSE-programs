@@ -21,6 +21,10 @@ int disp(Stack *stack)
     printf("\n");
 }
 
+int is_operand(char ch){
+    return '0'<=ch && ch<='9';
+}
+
 int push(Stack *stack, char val)
 {
     stack->top++;
@@ -31,8 +35,47 @@ int pop(Stack *stack)
     if (stack->top < 0)
     {
         printf("Stack Underflow!\n");
-        exit(1);
+        return 0;
     }
     int idx = stack->top--;
     return stack->stack[idx];
+}
+
+int main(){
+    char rpn[200]="12+36*-";
+    Stack stack;
+    new_stack(&stack,50);
+    for (int i = 0; rpn[i]; i++)
+    {
+        if (is_operand(rpn[i]))
+        {
+            push(&stack,rpn[i]-'0');
+        }
+        else{
+            int a;
+            switch (rpn[i])
+            {
+            case '+':
+                a=pop(&stack)+pop(&stack);
+                push(&stack,a); 
+                break;
+            case '-':
+            a=pop(&stack)-pop(&stack);
+                push(&stack,a); 
+                break;
+            case '*':
+            a=pop(&stack)*pop(&stack);
+                push(&stack,a); 
+                break;
+            case '/':
+            a=pop(&stack)/pop(&stack);
+                push(&stack,a); 
+                break;
+            default:
+                break;
+            }
+                       
+        } 
+    }
+    printf("Solution is: %d\n",pop(&stack));
 }
