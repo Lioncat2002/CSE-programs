@@ -7,5 +7,17 @@ name = "class_strength"
 version = "0.1.0"
 
 [[package]]
+name = "factorial"
+version = "0.1.0"
+
+[[package]]
 name = "hello_world"
+version = "0.1.0"
+
+[[package]]
+name = "palindromestr"
+version = "0.1.0"
+
+[[package]]
+name = "prime"
 version = "0.1.0"

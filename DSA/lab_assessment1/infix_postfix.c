@@ -59,12 +59,13 @@ int precedence(char ch)
 
 int main()
 {
-	char exp[] = "1+2-3*6";
+	char exp[200];
 		int i, k;
 	Stack stack; 
     new_stack(&stack);
 	
-
+	printf("Enter the expression : ");
+	fgets(exp, 200, stdin);
 	for (i = 0, k = -1; exp[i]; ++i)
 	{
 		if (is_operand(exp[i]))
@@ -94,7 +95,7 @@ int main()
 		exp[++k] = pop(&stack );
 
 	exp[++k] = '\0';
-	printf( "%s", exp );
+	printf( "Postfix form: %s\n", exp );
 
 	return 0;
 }

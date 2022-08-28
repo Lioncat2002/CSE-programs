@@ -42,9 +42,11 @@ int pop(Stack *stack)
 }
 
 int main(){
-    char rpn[200]="12+36*-";
+    char rpn[200];
     Stack stack;
     new_stack(&stack,50);
+    printf("Enter the expression : ");
+	fgets(rpn, 200, stdin);
     for (int i = 0; rpn[i]; i++)
     {
         if (is_operand(rpn[i]))

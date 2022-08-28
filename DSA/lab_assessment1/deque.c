@@ -43,6 +43,7 @@ int enqueue_front(Deque *deque, int val)
     if ((deque->front == 0 && deque->rear == deque->size - 1) || deque->front == deque->rear + 1)
     {
         printf("Deque Overflow");
+        return 0;
     }
     if (deque->front == -1 && deque->rear == -1)
     {
@@ -88,7 +89,7 @@ int deque_rear(Deque *deque)
 {
     if (deque->front == deque->rear)
     {
-        if (deque->front == -1)
+        if (deque->rear == -1)
         {
             printf("Deque Underflow");
             return 0;
@@ -106,10 +107,11 @@ int deque_rear(Deque *deque)
     }
     printf("%d\n", deque->deque[deque->rear]);
     deque->rear--;
+    printf("Meow");
 }
 int display(Deque *deque){
     printf("\n");
-    for(int i=0;i<=deque->rear;i++){
+    for(int i=deque->front;i<=deque->rear;i++){
         printf("%d ",deque->deque[i]);
     }
     printf("\n");
@@ -117,11 +119,44 @@ int display(Deque *deque){
 int main()
 {
     Deque deque;
+    int val,choice;
     new(&deque, 37);
-    enqueue_rear(&deque, 34);
-    deque_front(&deque);
-    enqueue_front(&deque, 35);
-    enqueue_rear(&deque, 36);
-    enqueue_rear(&deque, 37);
-    display(&deque);
+    do
+    {
+        printf("1. For enque rear\n");
+        printf("2. For enque front\n");
+        printf("3. For deque front\n");
+        printf("4. For deque rear\n");
+        printf("5. For display\n");
+        printf("6. For exit\n");
+        printf("Enter your choice: ");
+        scanf("%d", &choice);
+        switch (choice)
+        {
+        case 1:
+            printf("Enter value to insert at rear: ");
+            scanf("%d", &val);
+            enqueue_rear(&deque, val);
+            break;
+        case 2:
+            printf("Enter value to insert at front: ");
+            scanf("%d", &val);
+            enqueue_front(&deque, val);
+            break;
+        case 3:
+            deque_front(&deque);
+            break;
+        case 4:
+            deque_rear(&deque);
+            break;
+        case 5:
+             display(&deque);
+            break;
+        case 6:
+            break;
+        default:
+            printf("Invalid command");
+        }
+    } while (choice != 6);
+   
 }
