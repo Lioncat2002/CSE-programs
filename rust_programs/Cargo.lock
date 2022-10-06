@@ -21,3 +21,15 @@ version = "0.1.0"
 [[package]]
 name = "prime"
 version = "0.1.0"
+
+[[package]]
+name = "series1"
+version = "0.1.0"
+
+[[package]]
+name = "series2"
+version = "0.1.0"
+
+[[package]]
+name = "valid_palindrome"
+version = "0.1.0"
