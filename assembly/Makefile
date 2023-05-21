@@ -1,4 +1,4 @@
 default:
-	nasm -f elf helloworld.asm
-	ld -m elf_i386 helloworld.o -o helloworld
+	nasm -f elf test.asm
+	ld -m elf_i386 test.o -o helloworld
 	./helloworld

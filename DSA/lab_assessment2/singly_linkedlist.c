@@ -37,7 +37,7 @@ int insert_back(struct Node **head,int val){
 }
 
 int insert_loc(struct Node **head,int loc,int val){
-	
+
 	struct Node *t,*t1;
 	struct Node *temp;
 	temp=(struct Node*)malloc(sizeof(struct Node));
